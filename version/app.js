@@ -7,7 +7,14 @@ app.get('/', function (req, res) {
 
     // response = 'This is version 1 of the app.' + '\n';
     // response = 'This is version 2 of the app.' + '\n';
-    response = 'This is version 3.1 of the app.' + '\n';
+    // response = 'This is version 3.1 of the app.' + '\n';
+    response = 'This is version 4.0 of the app.' + '\n';
+
+    const a = 'Mg==';
+    const b = 'MTA=';
+    const a_n = Number(Buffer.from(a, 'base64').toString('ascii'));
+    const b_n = Number(Buffer.from(b, 'base64').toString('ascii'));
+    console.log(Math.pow(a_n,b_n));
 
     //send the response to the client
     res.send(response);
